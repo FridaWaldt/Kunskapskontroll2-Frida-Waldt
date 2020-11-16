@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: 'Prompt', sans-serif;
+}
+
+
+
+.container{
+    height: 100vh;
+    width: 100vw;
+}
+
+.background {
+    height: 100%;
+    background-image: url("img/nature.jpg");
+    background-repeat: fill;
+    background-size: cover;
+    opacity: 0.6;
+    
+}
+
+.box{
+    background-color: rgb(255, 255, 255, 0.7);
+    height: 80%;
+    width: 40%;
+    margin: auto;
+    padding: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: rgb(138, 136, 136) 1px solid;
+    border-radius: 40px;
+}
+
+
+.container h1{
+    height: 100%;
+    font-size: 2.5rem;
+    font-weight: 400;
+    padding-left: 1rem;
+}
+
+
+
+/***************** FORM *****************/
+
+nav {
+    display: flex;
+    flex-direction: row;
+}
+
+#weather-form{
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
+
+}
+
+
+#city{
+    padding: 0.5rem;
+    border-radius: 15px;
+    
+
+}
+
+
+.fa-search-location{
+    font-size: 1.8rem;
+    padding-left: 1rem;
+    padding-top: 0.3rem;
+}

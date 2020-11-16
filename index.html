@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h1>Your Weather App</h1>
+            <form id='weather-form'>
+                <input type='text' id="city" placeholder = 'Search City'>
+                <i class="fas fa-search-location"></i>
+            </form>
+        </nav>
+        <div class="background"></div>
+        
+        
+        <div class="box">
+            <h2 id='city-name'></h2>
+            <img src="#" alt="" id="weather-icon">
+            <section class="weather-info">
+                <div id="catch-error"></div>
+                <div id = "description"></div>
+                <div id = "temperature"></div>
+                <div id = "wind-speed"></div>
+                <div id = "humidity"></div>
+            </section>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://kit.fontawesome.com/62d8895895.js" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>
