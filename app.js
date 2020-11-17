@@ -58,9 +58,8 @@ form.addEventListener('submit',
             }
         )
         .catch(function (error){
-            setTimeout(function () {
-                catchError.innerText = "";
-            }, 3000);
+            removeData()
+            console.log('Jag är i catch')
             const catchError = document.querySelector('#catch-error');
             catchError.innerText = "Incorrect city, try again";
             
@@ -68,7 +67,7 @@ form.addEventListener('submit',
     }
 )
 
-
+/* För att få fram land: data.sys.country */
 
 function presentData(n, d, i, t, w, h){
     let cityName = document.querySelector('#city-name')
@@ -76,7 +75,8 @@ function presentData(n, d, i, t, w, h){
     let weatherIcon = document.querySelector('#weather-icon');
     let temperature = document.querySelector('#temperature');
     let windSpeed = document.querySelector('#wind-speed');
-    let humidity = document.querySelector('#humidity')
+    let humidity = document.querySelector('#humidity');
+    let error = document.querySelector('#catch-error');
 
     cityName.innerText = n;
     cityDescription.innerText = d;
@@ -84,9 +84,30 @@ function presentData(n, d, i, t, w, h){
     temperature.innerText = t;
     windSpeed.innerText = w;
     humidity.innerText = h;
+    error.innerText = '';
 
 
 
 }
 
 
+
+// en funktion som tar bort data från .catch
+
+function removeData(){
+    let cityName = document.querySelector('#city-name')
+    let cityDescription = document.querySelector('#description');
+    let weatherIcon = document.querySelector('#weather-icon');
+    let temperature = document.querySelector('#temperature');
+    let windSpeed = document.querySelector('#wind-speed');
+    let humidity = document.querySelector('#humidity');
+    let error = document.querySelector('#catch-error');
+
+    cityName.innerText = '';
+    cityDescription.innerText = '';
+    weatherIcon.src = '';
+    temperature.innerText = '';
+    windSpeed.innerText = '';
+    humidity.innerText = '';
+    error.innerText = '';
+}
