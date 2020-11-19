@@ -8,25 +8,31 @@
 </head>
 <body>
     <div class="container">
-        <nav>
-            <h1>Your Weather App</h1>
-            <form id='weather-form'>
-                <input type='text' id="city" placeholder = 'Search City'>
-                <i class="fas fa-search-location"></i>
-            </form>
-        </nav>
-        <div class="background"></div>
+        
+        <div class="background">
+            <nav>
+                <h1>Your Weather App</h1>
+                <form id='weather-form'>
+                    <input type='text' id="city" placeholder = 'Search City'>
+                    <i class="fas fa-search-location"></i>
+                </form>
+            </nav>
+        </div>
         
         
         <div class="box">
             <h2 id='city-name'></h2>
             <img src="#" alt="" id="weather-icon">
+            <div id="catch-error"></div>
             <section class="weather-info">
-                <div id="catch-error"></div>
-                <div id = "description"></div>
                 <div id = "temperature"></div>
-                <div id = "wind-speed"></div>
-                <div id = "humidity"></div>
+                <div id = "description"></div>
+                <section class="extra-info">
+                    <h4 id = "wind-speed-title"></h4>
+                    <div id = "wind-speed"></div>
+                    <h4 id = "humidity-speed-title"></h4>
+                    <div id = "humidity"></div>
+                </section>
             </section>
         </div>
     </div>

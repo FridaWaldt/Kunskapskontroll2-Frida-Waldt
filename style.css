@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
 
 
 
@@ -10,7 +11,7 @@
 
 
 body{
-    font-family: 'Prompt', sans-serif;
+    font-family: 'Merriweather', serif;
 }
 
 
@@ -22,10 +23,10 @@ body{
 
 .background {
     height: 100%;
-    background-image: url("img/nature.jpg");
+    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url("img/nature.jpg");
     background-repeat: fill;
     background-size: cover;
-    opacity: 0.6;
+    
     
 }
 
@@ -45,16 +46,20 @@ nav {
     flex-direction: row;
 }
 
+nav h1{
+    padding-top: 1rem;
+}
+
 #weather-form{
     display: flex;
     justify-content: center;
     padding-top: 1.5rem;
-
+    margin-left: 30.5rem;
 }
 
 
 #city{
-    padding: 0.5rem;
+    padding: .5rem 2rem;
     border-radius: 15px;
     
 
@@ -72,9 +77,9 @@ nav {
 
 /***************** BOX ******************/
 .box{
-    background-color: rgb(255, 255, 255, 0.45);
-    height: 80%;
-    width: 40%;
+    background-color: rgb(255, 255, 255, 0.5);
+    height: 75%;
+    width: 35%;
     margin: auto;
     padding: 10px;
     position: absolute;
@@ -83,15 +88,55 @@ nav {
     transform: translate(-50%, -50%);
     border: rgb(138, 136, 136) 1px solid;
     border-radius: 40px;
+    text-align: center;
 }
 
 
 #city-name{
     font-size: 2.5rem;
-    text-align: center;
+    padding-top: 2rem;
 }
 
 
 #weather-icon{
+    height: 120px;
+    margin-top: 1rem;
+}
+
+
+#catch-error{
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+
+.weather-info{
+    display: flex;
+    flex-direction: column;
+    height: 50%;
     
+    
+}
+
+
+#temperature{
+    font-size: 2.5rem;
+}
+
+#description{
+    padding-top: 1rem;
+
+}
+
+
+
+
+.extra-info{
+    padding-top: 5rem;
+}
+
+.extra-info h4{
+    padding-top: 2rem;
+    font-size: 1.3rem;
 }
