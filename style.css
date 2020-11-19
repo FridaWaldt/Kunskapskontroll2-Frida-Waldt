@@ -65,6 +65,11 @@ nav h1{
 
 }
 
+button{
+    background: none;
+    border:none;
+}
+
 
 .fa-search-location{
     font-size: 1.8rem;
