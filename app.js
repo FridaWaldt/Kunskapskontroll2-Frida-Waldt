@@ -16,6 +16,8 @@
 
 */
 
+// Selecting my form then add an eventlistener to it for submitting an input.
+
 let form = document.querySelector('#weather-form');
 
 
@@ -37,7 +39,7 @@ form.addEventListener('submit',
 
 
 
-
+        //Finding data about city from input
         fetch(url).then(
             function(response){
                 return response.json();
@@ -53,10 +55,13 @@ form.addEventListener('submit',
                 const humid = data.main.humidity;
                 console.log(data.weather[0].icon);
 
+
+                //Calling functions for the data and the background, putting in the data we need
                 presentData(searchedCity, description, icon, temp, wind, humid); 
                 changeBackground(temp);
             }
         )
+        // Catch will catch the errors occuring when not typing correct city
         .catch(function (error){
             removeData();
             console.log('Jag är i catch', error)
@@ -67,7 +72,7 @@ form.addEventListener('submit',
 )
 
 
-//En funktion som presenterar data från input
+//A function that presents the data from input
 
 function presentData(n, d, i, t, w, h){
     let cityName = document.querySelector('#city-name')
@@ -79,6 +84,7 @@ function presentData(n, d, i, t, w, h){
     let humidity = document.querySelector('#humidity');
     let humidityTitle = document.querySelector('#humidity-speed-title');
     let error = document.querySelector('#catch-error');
+    
 
     cityName.innerText = n;
     cityDescription.innerText = d;
@@ -93,7 +99,7 @@ function presentData(n, d, i, t, w, h){
 }
 
 
-// en funktion som tar bort data från .catch
+// A function that removes data from .catch
 
 function removeData(){
     let cityName = document.querySelector('#city-name');
@@ -115,10 +121,11 @@ function removeData(){
     humidity.innerText = '';
     humidityTitle.innerText = '';
     error.innerText = '';
+    
 }
 
 
-//en funktion som ändrar bakgrund
+//A function that changes background depending on the temperature in the city 
 function changeBackground(temp){
     let background = document.querySelector('.background');
 
@@ -138,5 +145,3 @@ function changeBackground(temp){
 }
 
 
-
-/* För att få fram land: data.sys.country */
