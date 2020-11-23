@@ -1,21 +1,3 @@
-/* 
-1. All info ska presenteras i metric units - CHECK
-2. Ett formulär med en text-input och en submit-knapp där användaren anger en stad. - CHECK
-3. Det nuvarande vädret för den inmatade staden hämtas och  presenteras. Du behöver ha med följande: 
-    a. Description -CHECK
-    b. Väderikon, se https://openweathermap.org/weather-conditions - CHECK
-    c. Temperatur - CHECK
-    d. Vindhastighet - CHECK
-    e. Luftfuktighet - CHECK
-4. Temperaturdatan ska användas för att ändra färg på något i appen. Kan vara hela bakgrunden eller en liten ikon, du väljer själv.
-5. Utifall den inmatade staden inte kan hittas ska det visas ett tydligt och informerande meddelande.
-6. Kommentera all kod med beskrivning av vad den gör
-
-
-
-
-*/
-
 // Selecting my form then add an eventlistener to it for submitting an input.
 
 let form = document.querySelector('#weather-form');
@@ -39,11 +21,24 @@ form.addEventListener('submit',
 
 
 
-        //Finding data about city from input
+        //Making sure there's an error message depending on the statuscode
         fetch(url).then(
             function(response){
-                return response.json();
+                
+                if(response.status >= 200 && response.status < 300) {
+                    return response.json();
+                }
+
+                else if (response.status === 404){
+                    throw "Incorrect city, try again";
+                }
+
+                else if(response.status === 401){
+                    throw "Unauthorized, please come back later";
+                }
+                
             }
+        //Finding data about city from input
         ).then(
             function(data){
                 console.log(data);
@@ -66,7 +61,7 @@ form.addEventListener('submit',
             removeData();
             console.log('Jag är i catch', error)
             const catchError = document.querySelector('#catch-error');
-            catchError.innerText = "Incorrect city, try again";
+            catchError.innerText = error; //"Incorrect city"
         })
     }
 )
